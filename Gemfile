@@ -2,4 +2,7 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
+gem 'fast-mcp'
+gem 'tiny_tds'
+gem 'rack'
+gem 'puma'
