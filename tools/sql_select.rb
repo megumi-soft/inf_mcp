@@ -1,6 +1,6 @@
 module Tools
   class SqlSelect < FastMcp::Tool
-    description 'SQLを実行する'
+    description 'SQLを実行する。SQL Serverなので最新のレコードにはLIMITは使えない。TOPを使うこと'
 
     arguments do
       required(:sql).filled(:string).description('SQL')
