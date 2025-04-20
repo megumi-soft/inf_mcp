@@ -30,3 +30,4 @@ DATABASE_URL=mssql://user:password@localhost:5432/dbname
 - 開発
   - http://localhost:9292/mcp/sse
 - 本番
+  - https://inf-mcp.megumi-soft.com/mcp/sse
