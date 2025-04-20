@@ -11,6 +11,9 @@ require 'rack'
 require 'rack/handler/puma'
 
 require_relative 'db/connect'
+require_relative 'resource/tables/mst_area'
+require_relative 'resource/tables/mst_maker_kbn'
+require_relative 'resource/tables/mst_staff'
 
 # Define tools using the class inheritance approach
 class GreetTool < FastMcp::Tool
@@ -68,7 +71,9 @@ mcp_app = FastMcp.rack_middleware(
   server.register_tools(GreetTool, CalculateTool)
 
   # Register a sample resource
-  server.register_resource(HelloWorldResource)
+  server.register_resource(Resource::Tables::MstArea)
+  server.register_resource(Resource::Tables::MstMakerKbn)
+  server.register_resource(Resource::Tables::MstStaff)
 end
 
 # Run the Rack application with Puma
