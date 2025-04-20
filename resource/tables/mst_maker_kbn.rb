@@ -1,8 +1,8 @@
 module Resource
   module Tables
     class MstMakerKbn < FastMcp::Resource
-      uri 'file://tables/mst_maker_kbn'
-      resource_name 'mst_maker_kbn'
+      uri 'file://tables/mst_メーカー区分'
+      resource_name 'mst_メーカー区分'
       description 'メーカー区分のマスタデータテーブル'
       mime_type 'application/json'
 

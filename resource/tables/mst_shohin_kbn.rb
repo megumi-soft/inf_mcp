@@ -1,8 +1,8 @@
 module Resource
   module Tables
     class MstShohinKbn < FastMcp::Resource
-      uri 'file://tables/mst_shohin_kbn'
-      resource_name 'mst_shohin_kbn'
+      uri 'file://tables/mst_商品区分'
+      resource_name 'mst_商品区分'
       description '商品区分のマスタデータテーブル'
       mime_type 'application/json'
 

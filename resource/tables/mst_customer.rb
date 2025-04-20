@@ -1,8 +1,8 @@
 module Resource
   module Tables
     class MstCustomer < FastMcp::Resource
-      uri 'file://tables/mst_customer'
-      resource_name 'mst_customer'
+      uri 'file://tables/mst_得意先'
+      resource_name 'mst_得意先'
       description '得意先のマスタデータテーブル'
       mime_type 'application/json'
 
