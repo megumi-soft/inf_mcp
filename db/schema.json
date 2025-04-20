@@ -1,0 +1,450 @@
+[
+	{
+		"table_name" : "mst_area",
+		"column_name" : "area_no",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_area",
+		"column_name" : "area_name",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_staff",
+		"column_name" : "staff_no",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_staff",
+		"column_name" : "staff_name",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_staff",
+		"column_name" : "affiliation",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_staff",
+		"column_name" : "color",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_メーカー区分",
+		"column_name" : "メーカー区分コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_メーカー区分",
+		"column_name" : "メーカー区分名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_商品",
+		"column_name" : "商品コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_商品",
+		"column_name" : "商品名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_商品",
+		"column_name" : "商品区分コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_商品",
+		"column_name" : "メーカー区分コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_商品",
+		"column_name" : "単価",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_商品",
+		"column_name" : "仕入単価",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_商品区分",
+		"column_name" : "商品区分コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_商品区分",
+		"column_name" : "商品区分名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "得意先コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "得意先名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "部署名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "担当者名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "郵便番号",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "住所",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "TEL",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_得意先",
+		"column_name" : "メールアドレス",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_担当者",
+		"column_name" : "担当者コード",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "mst_担当者",
+		"column_name" : "担当者名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_担当者",
+		"column_name" : "ログインパスワード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "mst_担当者",
+		"column_name" : "権限フラグ",
+		"data_type" : "int",
+		"max_length" : 4,
+		"precision" : 10,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "map_no",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "area_no",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "customer_name",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "post_code",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "address",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "tel",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "latitude",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_map",
+		"column_name" : "longitude",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_schedule",
+		"column_name" : "schedule_no",
+		"data_type" : "int",
+		"max_length" : 4,
+		"precision" : 10,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "tbl_schedule",
+		"column_name" : "schedule_datetime",
+		"data_type" : "datetime2",
+		"max_length" : 8,
+		"precision" : 27,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_schedule",
+		"column_name" : "staff_no",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "見積コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "見積日付",
+		"data_type" : "datetime",
+		"max_length" : 8,
+		"precision" : 23,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "担当者コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "得意先コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "備考",
+		"data_type" : "nvarchar",
+		"max_length" : -1,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "小計",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "消費税",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "合計",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "最終更新日",
+		"data_type" : "datetime",
+		"max_length" : 8,
+		"precision" : 23,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積",
+		"column_name" : "最終更新者",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "見積コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "枝コード",
+		"data_type" : "int",
+		"max_length" : 4,
+		"precision" : 10,
+		"is_nullable" : 0
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "商品コード",
+		"data_type" : "nvarchar",
+		"max_length" : 100,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "商品名",
+		"data_type" : "nvarchar",
+		"max_length" : 510,
+		"precision" : 0,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "単価",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "数量",
+		"data_type" : "int",
+		"max_length" : 4,
+		"precision" : 10,
+		"is_nullable" : 1
+	},
+	{
+		"table_name" : "tbl_見積Sub",
+		"column_name" : "金額",
+		"data_type" : "money",
+		"max_length" : 8,
+		"precision" : 19,
+		"is_nullable" : 1
+	}
+]

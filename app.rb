@@ -3,11 +3,14 @@
 
 # Example of using MCP as a Rack middleware
 
+require 'dotenv/load'
 require 'bundler/setup'
 Bundler.require(:default, :examples)
 require 'fast_mcp'
 require 'rack'
 require 'rack/handler/puma'
+
+require_relative 'db/connect'
 
 # Define tools using the class inheritance approach
 class GreetTool < FastMcp::Tool
@@ -48,16 +51,6 @@ class CalculateTool < FastMcp::Tool
   end
 end
 
-class HelloWorldResource < FastMcp::Resource
-  uri 'file://hello_world'
-  resource_name 'Hello World'
-  description 'A simple hello world program'
-  mime_type 'text/plain'
-
-  def content
-    'puts "Hello, world!"'
-  end
-end
 
 # Create a simple Rack application
 app = lambda do |_env|
@@ -68,7 +61,7 @@ end
 # Create the MCP middleware
 mcp_app = FastMcp.rack_middleware(
   app,
-  name: 'example-mcp-server', version: '1.0.0',
+  name: 'inforce-mcp-server', version: '1.0.0',
   logger: Logger.new($stdout)
 ) do |server|
   # Register tool classes
