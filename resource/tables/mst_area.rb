@@ -7,7 +7,7 @@ module Resource
       mime_type 'application/json'
 
       def content
-        result = Db::Connect.client.execute('SELECT * FROM dbo.mst_area')
+        result = Db::Connect.client.execute('SELECT * FROM mst_area')
         result.to_a.to_json
       end
     end
