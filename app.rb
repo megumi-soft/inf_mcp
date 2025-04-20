@@ -1,9 +1,4 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
-
-# Example of using MCP as a Rack middleware
-
-require 'dotenv/load'
+require 'dotenv/load' if File.exist?('.env')
 require 'bundler/setup'
 Bundler.require(:default, :examples)
 require 'fast_mcp'
