@@ -31,7 +31,7 @@ mcp_app = FastMcp.rack_middleware(
   name:    'inforce-mcp-server',
   version: '1.0.0',
   logger:  Logger.new($stdout),
-  allowed_origins: ['*']
+  allowed_origins: [/.*/]
 ) do |server|
   server.register_tool(Tools::SqlSelect)
 
