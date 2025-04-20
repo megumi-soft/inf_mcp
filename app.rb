@@ -16,46 +16,6 @@ require_relative 'resource/tables/mst_shohin_kbn'
 require_relative 'resource/schema'
 require_relative 'tools/sql_select'
 
-# Define tools using the class inheritance approach
-class GreetTool < FastMcp::Tool
-  description 'Greet a person'
-
-  arguments do
-    required(:name).filled(:string).description('The name of the person to greet')
-  end
-
-  def call(name:)
-    "Hello, #{name}!"
-  end
-end
-
-class CalculateTool < FastMcp::Tool
-  description 'Perform a calculation'
-
-  arguments do
-    required(:operation).filled(:string).value(included_in?: %w[add subtract multiply
-                                                                divide]).description('The operation to perform')
-    required(:x).filled(:float).description('The first number')
-    required(:y).filled(:float).description('The second number')
-  end
-
-  def call(operation:, x:, y:) # rubocop:disable Naming/MethodParameterName
-    case operation
-    when 'add'
-      x + y
-    when 'subtract'
-      x - y
-    when 'multiply'
-      x * y
-    when 'divide'
-      x / y
-    else
-      raise "Unknown operation: #{operation}"
-    end
-  end
-end
-
-
 # Create a simple Rack application
 app = lambda do |_env|
   [200, { 'Content-Type' => 'text/html' },
