@@ -1,10 +1,12 @@
+# app.rb ── Heroku / ローカル共通エントリポイント
 require 'dotenv/load' if File.exist?('.env')
 require 'bundler/setup'
-Bundler.require(:default, :examples)
 require 'fast_mcp'
 require 'rack'
 require 'rack/handler/puma'
+require 'logger'
 
+# --- ここから自前のファイル群を読み込み ----------------------------
 require_relative 'db/connect'
 require_relative 'resource/tables/mst_area'
 require_relative 'resource/tables/mst_customer_person'
@@ -15,23 +17,23 @@ require_relative 'resource/tables/mst_shohin'
 require_relative 'resource/tables/mst_shohin_kbn'
 require_relative 'resource/schema'
 require_relative 'tools/sql_select'
+# ---------------------------------------------------------------------
 
-# Create a simple Rack application
-app = lambda do |_env|
+# シンプルな Rack アプリ
+app = ->(_env) {
   [200, { 'Content-Type' => 'text/html' },
    ['<html><body><h1>Hello from Rack!</h1><p>This is a simple Rack app with MCP middleware.</p></body></html>']]
-end
+}
 
-# Create the MCP middleware
+# MCP ミドルウェアを組み込む
 mcp_app = FastMcp.rack_middleware(
   app,
-  name: 'inforce-mcp-server', version: '1.0.0',
-  logger: Logger.new($stdout)
+  name:    'inforce-mcp-server',
+  version: '1.0.0',
+  logger:  Logger.new($stdout)
 ) do |server|
-  # Register tools
   server.register_tool(Tools::SqlSelect)
 
-  # Register resources
   server.register_resource(Resource::Tables::MstArea)
   server.register_resource(Resource::Tables::MstMakerKbn)
   server.register_resource(Resource::Tables::MstStaff)
@@ -42,23 +44,19 @@ mcp_app = FastMcp.rack_middleware(
   server.register_resource(Resource::Schema)
 end
 
-# Run the Rack application with Puma
-puts 'Starting Rack application with MCP middleware on http://localhost:9292'
-puts 'MCP endpoints:'
-puts '  - http://localhost:9292/mcp/sse (SSE endpoint)'
-puts '  - http://localhost:9292/mcp/messages (JSON-RPC endpoint)'
-puts 'Press Ctrl+C to stop'
+# ---------------- Puma 起動設定 ----------------
+# Heroku では ENV['PORT'] が必ず渡される。ローカルでは 9292 を既定値に
+port = Integer(ENV.fetch('PORT', 9292))
 
-# Use the Puma server directly instead of going through Rack::Handler
-require 'puma'
-require 'puma/configuration'
-require 'puma/launcher'
+puts "==> Booting (PID: #{Process.pid}) on 0.0.0.0:#{port}"
+puts "==> MCP endpoints:"
+puts "    • http://localhost:#{port}/mcp/sse"
+puts "    • http://localhost:#{port}/mcp/messages"
+puts "Press Ctrl+C to stop"
 
-app = Rack::Builder.new { run mcp_app }
-config = Puma::Configuration.new do |user_config|
-  user_config.bind 'tcp://localhost:9292'
-  user_config.app app
-end
-
-launcher = Puma::Launcher.new(config)
-launcher.run
+Rack::Handler::Puma.run(
+  mcp_app,
+  Host: '0.0.0.0',  # must bind to all interfaces on Heroku
+  Port: port,
+  Threads: "0:5"    # Heroku の free dyno でも無難に動く範囲
+)
