@@ -8,7 +8,7 @@ module Db
       password = database_url.split(/[:\/@]/)[4]
       host = database_url.split(/[:\/@]/)[5]
       database = database_url.split(/[:\/@]/)[6]
-      @client ||= TinyTds::Client.new username:, password:, host:, database:, azure: true
+      TinyTds::Client.new username:, password:, host:, database:, azure: true
     end
   end
 end
